@@ -1,6 +1,5 @@
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
-const { response } = require('../../../01-Activities/24-Stu_Custom-Middleware/Unsolved/routes');
 const app =express();
 
 
