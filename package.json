@@ -1,7 +1,6 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,6 +8,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.16.4",
+    "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leslie310/my-note-taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/leslie310/my-note-taker/issues"
+  },
+  "homepage": "https://github.com/leslie310/my-note-taker#readme",
+  "description": ""
 }
