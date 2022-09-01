@@ -19,5 +19,5 @@ app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 app.listen(PORT, () => {
-  console.log(`Api now installed ${PORT}`);
+  console.log(`Api now installed http://localhost:${PORT}`);
 });
