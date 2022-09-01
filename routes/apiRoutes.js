@@ -40,7 +40,29 @@ fs.readFile('./db.json', 'utf-8', (err, data) => {
     }
 });
 });
-
+router.delete('/:id', (req,res) => {
+    const { id } = req.params.id;
+    console.log(id)
+    console.log(req.params.id)
+fs.readFile('./db.json', 'utf-8', (err, data) => {
+    if(err) {
+        throw err;
+    } else {
+        const notes = JSON.parse(data);
+        notes.splice(0, 1);
+        fs.writeFile(
+            './db.json',
+            JSON.stringify(notes, null, 4),
+            (err, data) => {
+                if(err) {
+                    throw err;
+                }
+                res.json({data: req.body, message: "success!"});
+            }
+        );
+    }
+});
+});    
 
 
 module.exports = router;
