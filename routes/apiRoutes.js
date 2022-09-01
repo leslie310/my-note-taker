@@ -1,10 +1,10 @@
 const fs = require('fs');
-const uuid = require('../public/assets/helpers/uuid');
+const uuid = require('../public/Assets/helpers/uuid.js');
+const express = require('express');
 const router = express.Router();
 
-
 router.get('/',(req,res) => {
-    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+    fs.readFile('./db.json', 'utf-8', (err, data) => {
         if (err) {
             throw err;
         } else {
@@ -21,14 +21,14 @@ router.post('/', (req,res) => {
         text: req.body.text,
         id: uuid()
     }
-fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+fs.readFile('./db.json', 'utf-8', (err, data) => {
     if(err) {
         throw err;
     } else {
         const notes = JSON.parse(data);
         notes.push(newNote);
         fs.writeFile(
-            './db/db.json',
+            './db.json',
             JSON.stringify(notes, null, 4),
             (err, data) => {
                 if(err) {
